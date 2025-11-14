@@ -4,14 +4,27 @@ from datetime import datetime, timedelta
 # -------- Level 1 --------
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
-
+def viewAvailable():
+    print(f"Available books include: \n")
+    for book in library_books:
+        if book ["available"]:
+            print(f"ID: {book['id']} | {book['title']} by {book['author']}")
 
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
 # Search should be case-insensitive
 # Return a list of matching books
 
+def search():
+    key = input(f"What would you like to search for?")
+    key = key.lower()
+    for book in library_books:
+        if key in book['author'].lower() or key in book['genre'].lower():
+             print(f"ID: {book['id']} | {book['title']} by {book['author']}")
+   
 
+""" unfortunatly I got ill and only got the bare minimum done, I apologize. 
+My outline / plan for this project mainly detailed indexing and object usage since I was pretty unconfident with those skills."""
 # -------- Level 3 --------
 # TODO: Create a function to checkout a book by ID
 # If the book is available:
@@ -44,4 +57,6 @@ from datetime import datetime, timedelta
 
 if __name__ == "__main__":
     # You can use this space to test your functions
+    viewAvailable()
+    search()
     pass
